@@ -1,1 +1,1 @@
-12:00-13:30
+{\color{red}pendiente}

@@ -1,1 +1,1 @@
-\texttt{W}: 12:00-13:30 PM
+{\color{red}\texttt{Dia pendiente}: hora pendiente}
