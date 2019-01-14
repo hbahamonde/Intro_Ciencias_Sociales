@@ -1,3 +1,3 @@
-# Introduccion a las Ciencias Sociales
+# Social Sciences and Epistemology (UGRAD)
 
-En este repo, tengo mis materiales para enseñar el curso "Introduccion a las Ciencias Sociales" que doy en la UOH. 
+This is my epistemology course I teach at UOH (undergraduate level).

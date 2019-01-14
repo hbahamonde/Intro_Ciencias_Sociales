@@ -1,0 +1,773 @@
+% LaTeX Curriculum Vitae Template
+%
+% Copyright (C) 2004-2009 Jason Blevins <jrblevin@sdf.lonestar.org>
+% http://jblevins.org/projects/cv-template/
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely. No attribution is
+% required in any resulting documents. I do ask that you please leave
+% this notice and the above URL in the source code if you choose to
+% redistribute this file.
+
+\documentclass[letterpaper]{article}
+
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={My title},    % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+    citecolor=blue,        % color of links to bibliography
+    filecolor=blue,      % color of file links
+    urlcolor=blue           % color of external links
+}
+
+
+
+\usepackage{geometry}
+\usepackage{import} % To import email.
+\usepackage{marvosym} % face package
+\usepackage{xcolor,color}
+ \usepackage{fontawesome}
+
+% Comment the following lines to use the default Computer Modern font
+% instead of the Palatino font provided by the mathpazo package.
+% Remove the 'osf' bit if you don't like the old style figures.
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+
+% Set your name here
+\def\name{Introducci\'on a las Ciencias Sociales - }
+
+% Replace this with a link to your CV if you like, or set it empty
+% (as in \def\footerlink{}) to remove the link in the footer:
+\def\footerlink{}
+% \href{http://www.hectorbahamonde.com}{www.HectorBahamonde.com}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = blue,
+  pdfauthor = {\name},
+  pdfkeywords = {political science, epistemology},
+  pdftitle = {\name: Syllabus},
+  pdfsubject = {Syllabus},
+  pdfpagemode = UseNone
+}
+
+\geometry{
+  body={6.5in, 8.5in},
+  left=1.0in,
+  top=1.25in
+}
+
+% Customize page headers
+\pagestyle{myheadings}
+\markright{{\tiny \name}}
+\thispagestyle{empty}
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+
+% email input begin
+\newread\fid
+\newcommand{\readfile}[1]% #1 = filename
+{\bgroup
+  \endlinechar=-1
+  \openin\fid=#1
+  \read\fid to\filetext
+  \loop\ifx\empty\filetext\relax% skip over comments
+    \read\fid to\filetext
+  \repeat
+  \closein\fid
+  \global\let\filetext=\filetext
+\egroup}
+\readfile{/Users/hectorbahamonde/RU/Bibliografia_PoliSci/email.txt}
+% email input end
+
+
+%%% bib begin
+\usepackage[american]{babel}
+\usepackage{csquotes}
+%\usepackage[style=chicago-authordate,doi=false,isbn=false,url=false,eprint=false]{biblatex}
+
+\usepackage[authordate,isbn=false,doi=false,url=false,eprint=false]{biblatex-chicago}
+\DeclareFieldFormat[article]{title}{\mkbibquote{#1}} % make article titles in quotes
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}} % make theses italics
+
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+
+\addbibresource{/Users/hectorbahamonde/RU/Bibliografia_PoliSci/library.bib} 
+\addbibresource{/Users/hectorbahamonde/RU/Bibliografia_PoliSci/Bahamonde_BibTex2013.bib} 
+
+% USAGES
+%% use \textcite to cite normal
+%% \parencite to cite in parentheses
+%% \footcite to cite in footnote
+%% the default can be modified in autocite=FOO, footnote, for ex. 
+%%% bib end
+
+
+
+
+\begin{document}
+
+% Place name at left
+%{\huge \name}
+
+% Alternatively, print name centered and bold:
+\centerline{\huge \bf \name}
+
+\vspace{0.25in}
+
+\begin{minipage}{0.45\linewidth}
+ Universidad de O$'$Higgins \\
+  Instituto de Ciencias Sociales \\
+  Rancagua, Chile\\
+  \\
+  \\
+
+\end{minipage}
+\hspace{4cm}\begin{minipage}{0.45\linewidth}
+  \begin{tabular}{ll}
+{\bf Last updated}: \today. \\
+ {\bf Download last version} \href{https://github.com/hbahamonde/Social_Sciences_Epistemology_UGRAD/raw/master/Bahamonde_Social_Sciences_Epistemology_UGRAD_Syllabus.pdf}{here}.%\\
+   %{\bf {\color{red}{\scriptsize Not intended as a definitive version}}} %\\
+    \\
+    \\
+    \\
+    \\
+    \\
+  \end{tabular}
+\end{minipage}
+
+\vspace{-5mm}
+{\bf Professor}: Hector Bahamonde, PhD.\\
+%\texttt{e:}\href{mailto:hbahamonde@tulane.edu}{\texttt{hbahamonde@tulane.edu}}\\
+\texttt{e:}\href{mailto:hector.bahamonde@uoh.cl}{\texttt{hector.bahamonde@uoh.cl}}\\
+\texttt{w:}\href{http://www.hectorbahamonde.com}{\texttt{www.hectorbahamonde.com}}\\
+{\bf Office Hours}: Make an appointment \href{https://calendly.com/bahamonde/officehours}{\texttt{here}}.\\
+
+\vspace{1mm}
+{\bf Class meetings}: {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/time_class_1.txt}\unskip}; {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/time_class_2.txt}\unskip}.\\
+{\bf Class Location}: C306.\\
+{\bf Class Website and Materials}: \href{https://ucampus.uoh.cl/uoh/2018/2/AP1007/1/}{uCampus}.
+
+\vspace{0.5cm}
+{\bf Teaching Assistant (TA)}: {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/ta_name.txt}\unskip}.\\
+\texttt{e:}\href{mailto:ghbarria@uc.cl}{\texttt{ghbarria@uc.cl}}\\
+{\bf TA Bio}: {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/ta_name.txt}\unskip} obtained his BA in Political Science from Catolica University, and now is pursuing his Master degree degree at the same Institution.\\
+{\bf Recitation meetings}: Every {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/recitation_day.txt}\unskip}: {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/recitation_time.txt}\unskip}.\\
+{\bf Recitation Location}: M02.\\
+
+
+
+\subsection*{Overview and Objectives}
+
+This {\bf {\color{blue}undergraduate-level course}} offers an introduction to core philosophical and practical issues associated with the development of research designs in the social sciences. The course explores different techniques, uses, strengths, as well as limitations of a number of methodological approaches. It will also emphasize contemporary debates in the subfield. Upon completion of the course, students will have an enhanced ability to analyze scholarly work, and develop their own basic research designs. The course begins with a focus on the philosophy of science, theory construction, theory testing, and causal inference. This epistemological foundation will provide students with the tools necessary to grapple with issues involved with designing research projects in the social sciences. The course will then shift to a focus on several case-study methodologies. The final segment of the seminar examines field research techniques, and data collection.
+\\
+\\
+I hope this course catches your attention, in the expectation that you continue interested in these issues. Most of all, I hope you see what a diverse set of tools we, social scientists, have. {\bf Welcome!}
+
+
+\subsection*{Course Learning Objectives}
+ 
+Upon successful completion of this course, you will be able to:
+
+\begin{itemize}
+	\item[$\bullet$] Acquire an understanding of core concepts in epistemology in the social sciences. 
+	\item[$\bullet$] Recognize different epistemological approaches in the social sciences literature.
+	\item[$\bullet$] Apply a critical, creative, and holistic thinking, in the understanding of social phenomena.
+	\item[$\bullet$] Incorporate technologies, and apply techniques suited to understand, analyze, and solve issues of public nature.
+	\item[$\bullet$] Integrate cutting-edge knowledge, while building a professional and scientific language.
+\end{itemize}
+
+
+\subsection*{Classroom Etiquette}
+ 
+
+\begin{itemize}
+	\item[$\bullet$] Don't be late. The classroom's door will be locked after 15 minutes the class has began.
+	\item[$\bullet$] Do not eat during class. Beverages are fine.
+	\item[$\bullet$] No computers, phones, or any other electronic devices may be used in lecture for any reason---no exceptions. Any such devices on your person must be off (e.g., not merely on silent) and put completely away. Those who do not respect this requirement will be asked to leave the class.
+	\item[$\bullet$] Attendance is mandatory (and part of your participation grade). If you missed a class, please get the notes from another student. I do not offer make up sessions for students who are absent.
+	\item[$\bullet$] Please, follow the ``Email Etiquette'' I have \href{http://www.hectorbahamonde.com/resources/}{posted} on my website.
+\end{itemize}
+
+
+
+\subsection*{Requirements and Evaluations}
+
+\begin{enumerate}
+
+	% Participation
+	\item {\bf Readings, Participation, and Attendance}: {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/percentage_participation.txt}\unskip}\%.
+	\\
+	\\
+	The TA and myself expect you to keep up with the readings over the course of the semester. We employ an interactive lecture style, and you will need to have done the readings before class in order to participate. \emph{Full attendance does not imply full credit}. To get full credit, besides attendance, you will also need to \emph{actively} participate in my class, and in recitation.
+%\\
+%\\	
+	%There will be a number of pop quizzes during the semester, both in lecture \emph{and} recitation. Quizzes will be short (3-5 minutes), completed at any point of the class, and designed to make sure everyone is keeping up with the readings and lecture. There will be no make-up quizzes. If you are absent (or late) from class that day, you will get a $1$ on that quiz. 
+	%\\
+	%\\
+	% 3 credits
+	%Students are expected to put in 90 hours of work during the semester for a 3-credit class. That represents 5 hours per week, in a semester of 18 weeks. These are \emph{Universidad de O\'\unskip Higgins}'s guidelines. Since you will be spending 1.5 hours in the classroom, this means you should be working about 3.5 hours per week for this course {\bf outside} of the classroom. If you find that you are spending more than that, please see me in my office hours to discuss strategies to read more efficiently. 
+	\\
+	\\
+	% 6 credits
+	Students are expected to put in 180 hours of work during the semester for a 6-credit class. That represents 10 hours per week, in a semester of 18 weeks. These are \emph{Universidad de O$'$Higgins}'s guidelines. Since you will be spending 3 hours in the classroom, this means you should be working about 7 hours per week for this course {\bf outside} of the classroom. Since recitation lasts for 1.5 hours, that means that you should be {\bf reading} 5.5 hours per week. If you find that you are spending more than that, please see me in my office hours to discuss strategies to read more efficiently. 
+
+
+	% midterm
+	\item {\bf One in-class midterm exam, \underline{{\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/date_midterm.txt}\unskip}}}: {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/percentage_midterm.txt}\unskip}\%.
+	\\ 
+	\\
+	There is a midterm exam that covers the first half of the semester (everything, until {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/final_class_before_midterm.txt}\unskip}). You must take the exam at the scheduled time. There will be no make-ups, unless you have a documented medical excuse. (Documented) Medical excuses are the only type of exceptions that will be accepted. The exam will be a closed-book exam. Please note, exam questions will be drawn from the readings \emph{and} lectures \emph{and} recitation.
+
+
+	% design
+	\item {\bf A research design of 10-12 pages in length, \underline{{\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/date_design.txt}\unskip}}}: {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/percentage_design.txt}\unskip}\%.
+	\\ 
+	\\
+	In this exercise, you and your group ({\bf 5 people in total}) should produce a {\bf research design} paper that focuses on an specific topic in the social sciences. Bare in mind that you \emph{do not} actually have to \emph{implement} the entire design. I will meet with every group individually, to clarify initial questions, and calibrate which specific methods you should implement (and why), and which methods you should not implement. \emph{You and your group are in charge of this meeting} (i.e. I won't call you). \href{https://calendly.com/bahamonde/officehours}{Meet me} as soon as you can: the earlier the better. 
+	\\
+	\\
+	Please consult with me in advance what your thematic options are. Do \emph{not} write your paper without first double-checking with me if the topic is appropriate. For those matters, please \href{https://calendly.com/bahamonde/officehours}{make an appointment} with me. Importantly, the paper should use at least \emph{three} different methods discussed in the course.
+
+	\begin{itemize}
+	\item[\Pointinghand] {\bf While the project should be about a social phenomena, and using the approaches taught in this course, {\color{blue}you should work on aspects that touch upon our regional} (i.e. \emph{Regi\'on de O$'$Higgins}) {\color{blue}context, challenges, advantages, needs, or what not.}}
+	\end{itemize}
+
+	I take writing very seriously. I therefore strongly suggest that you begin your paper early, edit multiple drafts, and proofread it carefully before turning it in. Grammar, diction, and style, all shape the effectiveness of your writing and, as a result, will affect your grade. Consult William Strunk, Jr., and E. B. White, \href{http://www.jlakes.org/ch/web/The-elements-of-style.pdf}{\emph{The Elements of Style}}, for helpful hints regarding written expression. Joseph M. Williams and Gregory G. Colomb, \href{http://sir.spbu.ru/en/programs/master/master_program_in_international_relations/digital_library/Book%20Research%20seminar%20by%20Booth.pdf}{\emph{The Craft of Argument}} (New York: Longman, 2003), provides an excellent overview of the art of effective persuasive writing.\phantom{\textcite{Strunk1999,Booth2003}}
+	\\ 
+	\\
+	%On {\bf {\color{red}DATE}} we will discuss Barry Weingast's \href{https://web.stanford.edu/group/mcnollgast/cgi-bin/wordpress/wp-content/uploads/2013/10/CALTECH.RUL_..pdf}{Caltech Rules for Writing Papers: How to Structure your Paper and Write an Introduction}, 2010. This short piece will provide important guidance in writing an effective and well-structured paper.
+	%\\ \phantom{\textcite{Weingast2010}}
+	%\\
+	{\bf The paper is due in hard copy within the first 15 minutes of class on} {\bf {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/date_design.txt}\unskip}}. Turning it in before the due date is OK, but \emph{not} afterwards. {\bf Late papers will not be accepted, and will be graded with a 1}. There will \emph{not} be exceptions nor extensions. No electronic copies of any kind will be accepted.
+	\\
+	\\
+	I encourage you to \href{https://calendly.com/bahamonde/officehours}{see me in my office hours} \emph{before} the due date. If you want, \href{mailto:\filetext}{send me} your draft via email, then \href{https://calendly.com/bahamonde/officehours}{make an appointment}. That way I will be able to give you feedback on your work before the due date. You may also contact our TA. If you want to receive comments from us, please allow plenty of time for us to read your draft, and time to meet you. Consider also that your classmates will do the same. Consequently, plan accordingly.
+
+	\begin{itemize}
+	\item[\Pointinghand] Finally, the TA and myself have provided \href{https://github.com/hbahamonde/Social_Sciences_Epistemology_UGRAD/raw/master/Design/Design_Check_List.pdf}{a document} that should clearly guide you in what the requirements are for the final report.
+	\end{itemize}
+
+	% conference
+	\item {\bf One in-class mock-conference, \underline{{\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/date_conference.txt}\unskip}}}: {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/percentage_conference.txt}\unskip}\%. 
+	\\
+	\\
+	As you will learn in this course, social science is a collective enterprise. That is, we are expected to \emph{actively} engage with other scientists, and members of society alike. ``Actively'' means that we have to convince everyone that our theories/methods matter. Therefore, {\bf you and your group} are expected to present your \emph{improved} design (i.e. incorporating our feedback) in front of your fellow classmates. The conference will be organized in different panels. The president of the conference will organize the panel thematically. I am the president. The format will follow the same rules any professional conference has. See below the details.
+	
+\begin{enumerate}
+	\item {\bf Roles}: You will have the next roles:
+
+		\begin{itemize}
+			\item[-] {\bf Speaker}: gives a professional presentation. \emph{Everyone in the group presents}.
+			\item[-] {\bf Participant}: as a member of the audience, provides mindful comments/constructive criticism of the papers.
+		\end{itemize}
+
+	\item {\bf Dress code}: business casual.
+
+	\item {\bf Presentation}: professional. You should avoid excessive coloration, and at all cost, animations, and unprofessionally-looking fonts and sizes, use of ClipArt, etc. 
+
+\end{enumerate}
+
+{\bf All these items will be graded}. As you see, I have high expectations about this conference. In the future, you will be giving an actual presentation, either at a conference, or businesses meeting in front of members of the private and/or public sector. Hence, it's important for you to learn the rules of these things early in the process. We will discuss all the necessary details at the right time in the semester.
+
+
+	\item {\bf Final Exam, \underline{{\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/date_final.txt}\unskip}}}: {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/percentage_final.txt}\unskip}\%. 
+
+There is a final exam that covers the second half of the semester. The exam is not cumulative. Expect the same format/difficulty of the midterm exam.
+
+You must take the exam at the scheduled time. There will be no make-ups, unless you have a documented medical excuse. (Documented) Medical excuses are the only type of exceptions that will be accepted. The exam will be a closed-book exam. Please note, exam questions will be drawn from the readings \emph{and} lectures \emph{and} recitation.
+
+
+\end{enumerate}
+
+
+
+\subsection*{Recitation}
+
+In this class there will be a \emph{mandatory} weakly recitation. This means that the TA not only will take attendance, but also, structure weekly sessions designed  to clarify further questions, or doubts you might have. Both your attendance \emph{and} active participation \emph{will} be graded. Failure to attend, and/or failure to engage with the discussion, will impact negatively your {\bf participation grade}. \emph{In other words, full attendance does not imply full credit}. %Consider also that the TA might give pop-up quizzes during recitation. You \emph{don't} want to miss those. 
+\\
+\\
+This is how it works. Every {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/recitation_day.txt}\unskip} ({\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/recitation_time.txt}\unskip}), you will meet {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/ta_name.txt}\unskip}. The TA will address the same readings. We believe that students benefit more when exposed to the same idea more than once. You may call this ``osmosis,'' or the process by which ideas are assimilated by repetition. Importantly, the TA might (or not) have a different lecturing style. Students should also benefit from instructors who take a different angle at the subject matter. 
+\\
+\\
+If needed, the TA could spend up to one extra hour right after recitation, for example, in the library, solving additional questions. However, make sure you \href{mailto:ghbarria@uc.cl}{contact} {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/ta_name.txt}\unskip} 24 hours before recitation. Without this request, s/he is not obliged to stay at all. Bare in mind: it's a \emph{request}. The TA is free to decline your request.
+\\
+\\
+The TA will be available by email,\footnote{Please use your institutional email accounts only, i.e. \texttt{@uoh.cl}.} and in-person only.\footnote{No meetings outside of the University's property are allowed.} Communication with the TA will be acceptable for academic reasons only. The TA will not share his/her cellphone number, nor engage in social media activities with the students.
+
+\subsection*{Disputing Grades}
+
+I am happy to go over any exam or paper with you. Request for re-grading, though, must be done in writing. Please refer to my \href{https://github.com/hbahamonde/hbahamonde.github.io/raw/master/resources/ReGrade_Policy.pdf}{re-grading policy}.
+
+
+\subsection*{Academic Integrity}
+Our university does not have (at the moment) an Office of Academic Integrity. Consequently, I will follow Tulane University's policy on Academic Integrity. In my class, you are expected to fully comply with that school's \href{https://college.tulane.edu/code-of-academic-conduct}{\texttt{policies}}. 
+
+
+\subsection*{Students with Disabilities}
+In my class, {\bf ALL} are welcomed. Students with disabilities who require accommodation should check with the {\color{blue}Direcci\'on de Asuntos Estudiantiles (DAE)}.
+
+
+\subsection*{Absence from Exams}
+
+
+There will be no make-up exams unless you have a \emph{documented} {\bf medical} emergency. If at all possible, I need to be notified before the exam of your inability to take it. Absence from an exam because of travel plans will not be excused. Make travel plans accordingly. 
+
+
+\subsection*{Office Hours}
+
+I have an open-doors policy, feel free to stop by my office at any time. However, you might want to minimize the risks that I am not there, or can't meet you that day. I advice you then to \href{https://calendly.com/bahamonde/officehours}{\texttt{schedule time with me}} using my automatic scheduler. I think fixed office hours do not work because ... well, they are \emph{fixed}. I prefer flexibility. Hence, you can see me any day/time that's available during the week. Do not send me a reminder as I will receive an alert: If the time spot is available, I am happy to see you there.
+
+
+
+\subsection*{Schedule}
+
+\begin{enumerate}
+
+\item {\bf Introductions, and Analytical Frameworks}
+	\begin{itemize}
+		\item {\bf Aug 6: Introductions}
+			\begin{itemize}
+				\item[$\bullet$] Overview of syllabus, course requirements, and introduction to the course
+			\end{itemize}
+
+		\item {\bf Aug 8: Bridging Divides? Unified Methodologies?}
+		\begin{itemize}
+			\item[$\bullet$] Rudra Sil. \href{https://www.journals.uchicago.edu/doi/abs/10.2307/3235291}{The Division of Labor in Social Science Research: Unified Methodology or ``Organic Solidarity''?} \emph{Polity} 32(4): 499-531, 2000.\phantom{\textcite{Sil2000}}
+			\item[$\bullet$] Henry Brady. \href{http://www.jstor.org/stable/3688441}{Introduction to Symposium: Two Paths to a Science of Politics}. \emph{Perspectives on Politics} 2(2): 295-300, 2004.\phantom{\textcite{Brady2004}}
+			\item[$\bullet$] Sidney Tarrow, ``Bridging the Qualitative-Quantitative Divide,'' in  Henry Brady and David Collier (eds.) \emph{Rethinking Social Inquiry: Diverse Tools, Shared Standards}. Rowman \& Littlefield Publishers, 2004.\phantom{\textcite{Brady:2004vf}}
+		\end{itemize}
+	\end{itemize}
+
+\item {\bf Philosophy of Science: How to Build Knowledge}
+
+
+	\begin{itemize}
+		\item {\bf Aug 13: Basic Elements of Research Design}
+		\begin{itemize}
+			\item[$\bullet$] Gary King, Robert Keohane, Sidney Verba. \href{https://sites.duke.edu/niou/files/2014/06/king94book.pdf}{\emph{Designing Social Inquiry: Scientific Inference in Qualitative Research}}, pp. 3-49. Princeton University Press, 1994.\phantom{\textcite{King1994}}
+			\item[$\bullet$] Gerardo Munck, ``\href{https://www.researchgate.net/profile/Gerardo_Munck/publication/275658363_Tools_for_Qualitative_Research/links/5543d6aa0cf23ff71685246b/Tools-for-Qualitative-Research.pdf?_sg%5B0%5D=r_R0BVrbsZuiuUXoAJ0eTIfTaBGDEmHwU9Fvy4Iy84l1eEXqwnkOwNaxe4H3GrNHCW_-JejGObDf18Hd0q4xGQ.bhboK7u6gIPsRQjPj9MO00N3wm97omzXr30hewGtE8ZkeuycaF6m-lRDEsnccltioSavZt3o-DFMdyIdbAwolw&_sg%5B1%5D=k17BN3VARUYm3n_uwfSOMdFxcWWaz3MKHTNzc4Qsmr2oipNZDi9zhpyXXhBLeS4OaCOYox1jNLjN-U81wEptAsy92oFLbTsIKkIJLmgLxLW7.bhboK7u6gIPsRQjPj9MO00N3wm97omzXr30hewGtE8ZkeuycaF6m-lRDEsnccltioSavZt3o-DFMdyIdbAwolw&_iepl=}{Tools for Qualitative Research},'' in  Henry Brady and David Collier (eds.) \emph{Rethinking Social Inquiry: Diverse Tools, Shared Standards}. Rowman \& Littlefield Publishers, 2004.\phantom{\textcite{Brady:2004vf}}
+			\item[$\bullet$] Gary King, Robert Keohane, and Sidney Verba, "The Importance of Research Design," in  Henry Brady and David Collier (eds.) \emph{Rethinking Social Inquiry: Diverse Tools, Shared Standards}. Rowman \& Littlefield Publishers, 2004.\phantom{\textcite{Brady:2004vf}} 
+		\end{itemize}
+	\end{itemize}
+
+
+~\\
+\item[] \begin{center}{\color{blue}{\bf Wednesday August 15, National Holiday: No class.}}\end{center}
+~\\
+
+		\begin{itemize}
+		\item {\bf Aug 20: Logical Positivism}
+			\begin{itemize}
+				\item[$\bullet$] Rudolph Carnap, ``The Value of Laws: Explanation and Prediction,'' in \href{https://archive.org/details/PhilosophicalFoundationsOfPhysics}{\emph{An Introduction to the Philosophy of Science: Philosophical Foundations of Physics}}, pp. 3-18. Basic Books, 1966.\phantom{\textcite{Carnap1966}}
+				\item[$\bullet$] Arthur Stinchcombe, ``The Logic of Scientific Inference,'' in \href{http://www.nyu.edu/classes/jackson/design.of.social.research/Readings/Stinchcombe%20-%20Constructing%20Soc%20Thry%20Ch%202.pdf}{\emph{Constructing Social Theories}}, pp. 15-43. Harcourt Brace, 1968.\phantom{\textcite{Stinchcombe1968}}
+				\item[$\bullet$] Ronald Giere. \href{https://www.journals.uchicago.edu/doi/pdfplus/10.1086/289800}{The Cognitive Structure of Scientific Theories}. \emph{Philosophy of Science} 61(2): 276-296, 1994.\phantom{\textcite{Giere1994}}
+			\end{itemize}
+		\end{itemize}
+
+
+		\begin{itemize}
+		\item {\bf Aug 22: Falsification}
+			\begin{itemize}
+				\item[$\bullet$] Karl Popper. ``Falsifiability,'' in \href{https://archive.org/details/PopperLogicScientificDiscovery}{\emph{The Logic of Scientific Discovery}}, pp. 57-73. Routledge, 2005.\phantom{\textcite{Popper1935}}
+				\item[$\bullet$] Imre Lakatos, ``Falsification and the Methodology of Scientific Research Programmes,'' in \href{http://strangebeautiful.com/other-texts/lakatos-meth-sci-research-phil-papers-1.pdf}{\emph{The Methodology of Scientific Research Programmes}}, pp. 8-101. Cambridge University Press, 1970.\phantom{\textcite{LakatosImre1967}} 
+			\end{itemize}
+		\end{itemize}
+
+
+
+
+\item {\bf The Philosophy of Social Science}
+		
+		\begin{itemize}
+		\item {\bf Aug 27: Naturalism}
+			\begin{itemize}
+					\item[$\bullet$] Carl Hempel. \href{https://www.jstor.org/stable/pdf/2017635.pdf}{The Function of General Laws in History}. \emph{Journal of Philosophy}, 39(2): 35-48, 1942.\phantom{\textcite{Hempel1942}}
+					\item[$\bullet$] Harold Kinkaid. \href{http://journals.sagepub.com/doi/pdf/10.1177/004839319002000104}{Defending Laws in the Social Sciences}. \emph{Philosophy of the Social Sciences}, 20(1): 56-83, 1990.\phantom{\textcite{Kincaid1990}}
+			\end{itemize}
+		\end{itemize}
+
+
+		\begin{itemize}
+		\item {\bf Aug 29: Anti-Naturalism}
+			\begin{itemize}
+					\item[$\bullet$] Alberto Hirschman. \href{http://www.jstor.org/stable/2009600}{The Search for Paradigms as a Hindrance to Understanding}. \emph{World Politics}, 22(3): 329-343, 1970.\phantom{\textcite{Hirschman1970}} 
+					\item[$\bullet$] Raymond Martin. \href{http://www.jstor.org/stable/2505422}{The Essential Difference between History and Science}. \emph{History and Theory}, 36(1): 1-14, 1997.\phantom{\textcite{Martin1997}} 
+			\end{itemize}
+		\end{itemize}
+
+
+		\begin{itemize}
+		\item {\bf Sept 3: Common Ground}
+			\begin{itemize}
+					\item[$\bullet$] Paul Churchland. \href{http://www.jstor.org/stable/2214269}{Folk Psychology and the Explanation of Human Behavior}. \emph{Philosophical Perspectives}, 3: 225-241, 1989.\phantom{\textcite{Churchland1989}} 
+					\item[$\bullet$] Fritz Machlup. \href{http://www.jstor.org/stable/1055084}{Are the Social Sciences Really Inferior?} \emph{Southern Economic Journal}, 27(3): 173-184, 1961.\phantom{\textcite{Machlup1961}} 
+			\end{itemize}
+		\end{itemize}
+
+
+\item {\bf Description and Interpretation in Social Science}
+		
+		\begin{itemize}
+		\item {\bf Sept 5: Description as a Scientific Enterprise}
+			\begin{itemize}
+					\item[$\bullet$] John Gerring. \href{http://www.jstor.org/stable/23274165}{Mere Description}. \emph{British Journal of Political Science}, 42(4): 721-746, 2012.\phantom{\textcite{Gerring2012a}} 
+		\end{itemize}
+		\end{itemize}
+
+
+		\begin{itemize}
+		\item {\bf Sept 10: Description as an Unscientific Approach}
+			\begin{itemize}
+					\item[$\bullet$] Gary King, Robert Keohane, Sidney Verba. \href{https://sites.duke.edu/niou/files/2014/06/king94book.pdf}{\emph{Designing Social Inquiry: Scientific Inference in Qualitative Research}}, 75-114. Princeton University Press, 1994.\phantom{\textcite{King1994}}
+			\end{itemize}
+		\end{itemize}
+
+		\begin{itemize}
+		\item {\bf Sept 12: Interpretation}
+			\begin{itemize}
+					\item[$\bullet$] Clifford Geertz. \href{https://quod.lib.umich.edu/cache/h/e/b/heb01005.0001.001/00000011.tif.30.pdf#page=3;zoom=75}{``Thick Description: Toward an Interpretive Theory of Culture,''} in \emph{Interpretation of Cultures: Selected Essays by Clifford Geertz}, pp. 3-32. Basic Books, 1973.\phantom{\textcite{Geertz1973}} 
+					\item[$\bullet$] Charles Taylor. \href{http://www.jstor.org/stable/20125928}{Interpretation and the Sciences of Man}. \emph{The Review of Metaphysics}, 25(1): 3-51, 1971.\phantom{\textcite{Taylor1971}}
+			\end{itemize}
+		\end{itemize}
+
+~\\
+\item[] \begin{center}{\color{blue}{\bf National Holiday}. {\bf \underline{No class}}. {\bf \underline{No recitation}}. See you back on Sept 24.}\end{center}
+~\\
+
+\item {\bf Explanation, Causality, Mechanisms}
+		
+		\begin{itemize}
+		\item {\bf Sept 24: Causality in the Social World}
+			\begin{itemize}
+					\item[$\bullet$] Peter Abell. \href{http://journals.sagepub.com/doi/pdf/10.1177/0049124109339372}{A Case for Cases Comparative Narratives in Sociological Explanation}. \emph{Sociological Methods and Research} 30(1): 57-80, 2001.\phantom{\textcite{Abell2009}} 
+					\item[$\bullet$] Robert Lieberman. \href{http://www.jstor.org/stable/3117505}{Ideas, Institutions, and Political Order: Explaining Political Change}. \emph{American Political Science Review}, 96(4): 697-712, 2002.\phantom{\textcite{Lieberman2002}} 
+					\item[$\bullet$] Margaret Marini and Burton Singer. \href{http://www.jstor.org/stable/271053}{Causality in the Social Sciences}. \emph{Sociological Methodology}, 18(1): 347-409, 1988.\phantom{\textcite{Marini1988}}
+			\end{itemize}
+		\end{itemize}
+
+
+
+		\begin{itemize}
+		\item {\bf Sept 26: Counterfactual Analysis}
+			\begin{itemize}
+				\item[$\bullet$] James Fearon. \href{http://www.jstor.org/stable/2010470}{Counterfactuals and Hypothesis Testing in Political Science}. \emph{World Politics}, 43(2): 169-195, 1991.\phantom{\textcite{Fearon1991}}
+			\end{itemize}
+		\end{itemize}
+
+
+
+		%\begin{itemize}
+		%\item {\bf Sept 26: Mechanisms}
+		%	\begin{itemize}
+		%			\item[$\bullet$] Charles Tilly. \href{https://www.annualreviews.org/doi/pdf/10.1146/annurev.polisci.4.1.21}{Mechanisms in Political Processes}. \emph{Annual Review of Political Science}, 4(1): 21-41, 2001.\phantom{\textcite{Tilly2001}} 
+		%			\item[$\bullet$] Peter Hedstr\"om and Richard Swedberg. \href{http://www.jstor.org/stable/4194832}{Social Mechanisms}. \emph{Acta Sociologica}, 39(3): 281-308, 1996.\phantom{\textcite{Hedstrom1996}} 
+		%	\end{itemize}
+		%\end{itemize}
+
+
+
+
+
+
+\item {\bf Concept Formation and the Criterial Framework}
+		
+		\begin{itemize}
+		\item {\bf {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/final_class_before_midterm.txt}\unskip}: Concept Formation}
+			\begin{itemize}
+				\item[$\bullet$] Giovanni Sartori. \href{https://doi.org/10.2307/1958356}{Concept Misformation in Comparative Politics}. \emph{The American Political Science Review}, 64(4): 1033-1053, 1970.\phantom{\textcite{Sartori1970}}
+				\item[$\bullet$] Robert Adcock and David Collier. \href{http://www.jstor.org/stable/3118231}{Measurement Validity: A Shared Standard for Qualitative and Quantitative Research}. \emph{The American Political Science Review}, 95(3): 529-546, 2001.\phantom{\textcite{Adcock2001a}}
+				\item[$\bullet$] Gary Goertz. ``Social Science Concepts: A User's Guide,'' pp. 1-101. Princeton University Press, 2005.\phantom{\textcite{Goertz:2011vj}} 
+			\end{itemize}
+		\end{itemize}
+
+
+
+		%\begin{itemize}
+		%\item {\bf Oct 3: The Criterial Approach}
+		%	\begin{itemize}
+		%		\item[$\bullet$] John Gerring. "Social Science Methodology: A Criterial Framework," 35-86. Cambridge University Press, 2001.\phantom{\textcite{Gerring:2001aa}} 
+		%	\end{itemize}
+		%\end{itemize}
+
+
+\vspace{-0.1cm}
+\item[] \begin{center}{\color{blue}{\bf Midterm}: \underline{{\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/date_midterm.txt}\unskip}.}}\end{center}
+	~\\ 
+	\vspace{-1cm}\begin{center}$\uparrow$ {\color{blue}For the \underline{midterm}, keep calm, and study everything that's above.} $\uparrow$ \end{center}
+	~\\
+	\vspace{-1cm}\begin{center} {\color{blue} Everything until {\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/final_class_before_midterm.txt}\unskip} might be asked.}\end{center}
+	~\\
+	\vspace{-1.5cm}\begin{center}\Smiley{} {\color{blue}You can do this} \Smiley{} \end{center}
+	~\\ 
+
+\vspace{-1cm}
+\item[] \begin{center}{\color{blue}{\bf $\downarrow$ Everything below will be considered in the \underline{final} $\downarrow$}} \end{center}
+\vspace{-0.05cm}
+
+
+\vspace{-0.01cm}
+\item[] \begin{center}{\color{blue}{\bf $\downarrow$ For your \underline{research design}, pick \emph{three} of the following methods $\downarrow$}} \end{center}
+\vspace{0.5cm}
+
+
+
+\item {\bf Case Study Designs (1)}
+		
+		\begin{itemize}
+		\item {\bf Oct 8: Defining Case Studies and Single Case Designs}
+			\begin{itemize}
+				\item[$\bullet$] Alexander George and Andrew Bennett, ``Part 1,'' in \href{https://pdfs.semanticscholar.org/94e9/eec015c650880356853533c4dc9b2dac42bb.pdf}{``\emph{Case Studies and Theory Development in the Social Sciences},''} pp. 3-36. MIT Press, 2004.\phantom{\textcite{George:2005aa}} % or George2004a% or George2004a
+				\item[$\bullet$] John Gerring. \href{https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0003055404001182}{What Is a Case Study and What Is It Good for?} \emph{American Political Science Review}, 98(2): 341-354, 2004.\phantom{\textcite{Gerring2004}} 
+			\end{itemize}
+		\end{itemize}
+
+
+
+		\begin{itemize}
+		\item {\bf Oct 10: Causal Inference, Mill's Method and Process-Tracing}
+			\begin{itemize}
+				\item[$\bullet$]  Tom\'as Bril-Mascarenhas, Antoine Maillet, Pierre-Louis Mayaux. \href{http://www.revistacienciapolitica.cl/index.php/rcp/article/view/354/73}{Process Tracing: Induction, Deduction, and Causal Inference}. \emph{Revista de Ciencia Pol\'itica}, 37(3): 659-684, 2017.\phantom{\textcite{Bril-Mascarenhas2017}}
+				\item[$\bullet$] Alexander George and Andrew Bennett, ``Comparative Methods: Controlled Comparison and Within Case Analysis,'' in ``\emph{Case Studies and Theory Development in the Social Sciences},'' pp. 151-181. MIT Press, 2004.\phantom{\textcite{George:2005aa}}% or George2004a
+				\item[$\bullet$] Alexander George and Andrew Bennett, ``Process-Tracing and Historical Explanation,'' in Alexander George and Andrew Bennett ``\emph{Case Studies and Theory Development in the Social Sciences},'' pp. 205-233. MIT Press, 2004.\phantom{\textcite{George:2005aa}}  % or George2004a
+			\end{itemize}
+		\end{itemize}
+		% consider: \todo{move this after structured, focused comparison.}\tabularnewline
+		% \todo{consider adding Lieberson2011}
+
+~\\
+\item[] \begin{center}{\color{blue}{\bf Monday Oct 15: National Holiday: No class.}}\end{center}
+~\\
+
+
+\item {\bf Case Study Designs (2)}
+		
+		\begin{itemize}
+		\item {\bf Oct 17: Structured, Focused Comparisons}
+			\begin{itemize}
+				\item[$\bullet$] Alexander George and Andrew Bennett, ``The Method of Structured, Focused Comparison,'' in Alexander George and Andrew Bennett \href{https://www.alnap.org/system/files/content/resource/files/main/george-and-bennett-how-to-do-case-studies.pdf}{``\emph{Case Studies and Theory Development in the Social Sciences},''} pp. 67-73. MIT Press, 2004.\phantom{\textcite{George:2005aa}} % or George2004a
+			\end{itemize}
+		\end{itemize}
+
+
+		\begin{itemize}
+		\item {\bf Oct 22: Comparative Case Study Designs}
+			\begin{itemize}
+				\item[$\bullet$] David Collier. \href{http://polisci.berkeley.edu/sites/default/files/people/u3827/APSA-TheComparativeMethod.pdf}{The Comparative Method}. \emph{American Political Science Association Meeting}, Washington D.C., 1993.\phantom{\textcite{Collier1993a}}
+				\item[$\bullet$] Stanley Lieberson. \href{http://www.jstor.org/stable/2580241}{Small N's and Big Conclusions: An Examination of the Reasoning in Comparative Studies Based on a Small Number of Cases}. \emph{Social Forces}, 70(2): 307-320, 1991.\phantom{\textcite{Lieberson1991}} 
+				\item[$\bullet$] Douglas Dion. \href{http://www.jstor.org/stable/422284}{Evidence and Inference in the Comparative Case Study}. \emph{Comparative Politics}, 30(2): 127-145, 1998.  % Dion1998a
+			\end{itemize}
+		\end{itemize}
+
+
+\item {\bf Case Study Designs (3)}
+
+		\begin{itemize}
+		\item {\bf Oct 24: Case Selection, and Selection Bias}
+			\begin{itemize}
+			\item[$\bullet$] Gary King, Robert Keohane, Sidney Verba. \href{https://sites.duke.edu/niou/files/2014/06/king94book.pdf}{\emph{Designing Social Inquiry: Scientific Inference in Qualitative Research}}, pp. 128-149. Princeton University Press, 1994.\phantom{\textcite{King1994}}
+			\item[$\bullet$] Barbara Geddes. \href{https://doi.org/10.1093/pan/2.1.131}{How the Cases You Choose Affect the Answers You Get: Selection Bias in Comparative Politics}. \emph{Political Analysis}, 2(1): 131-150, 1990.\phantom{\textcite{Geddes1990}}
+			\item[$\bullet$] David Collier and James Mahoney. \href{http://www.jstor.org/stable/25053989}{Insights and Pitfalls: Selection Bias in Qualitative Research}. \emph{World Politics}, 49(1): 56-91, 1996.\phantom{\textcite{Collier1996}} 
+
+			\end{itemize}
+		\end{itemize}
+
+		\begin{itemize}
+		\item {\bf Oct 29: Overcoming Selection Bias}
+			\begin{itemize}
+				\item[$\bullet$] Ian Lustick. \href{http://www.jstor.org/stable/2082612}{History, Historiography, and Political Science: Multiple Historical Records and the Problem of Selection Bias}. \emph{The American Political Science Review}, 90(3): 605-618, 1996.\phantom{\textcite{Lustick1996}}
+				\item[$\bullet$] Behan McCullagh. \href{http://www.jstor.org/stable/2677997}{Bias in Historical Description, Interpretation, and Explanation}. \emph{History and Theory}, 39(1): 39-66, 2000.\phantom{\textcite{Mccullagh2000}}
+			\end{itemize}
+		\end{itemize}
+
+
+\item {\bf Historical Analyses}
+		
+		\begin{itemize}
+		\item {\bf Oct 31: Macro-Historical Analysis and Comparison}
+			\begin{itemize}
+				\item[$\bullet$] Theda Skocpol and Margaret Somers. \href{http://www.jstor.org/stable/178404}{The Uses of Comparative History in Macrosocial Inquiry}. \emph{Comparative Studies in Society and History}, 22(2): 174-197, 1980.\phantom{\textcite{Skocpol1980}}
+				\item[$\bullet$] James Mahoney and Dietrich Rueschemeyer. \href{https://content.schweitzer-online.de/static/catalog_manager/live/media_files/representation/zd_std_orig__zd_schw_orig/002/352/762/9780521816106_content_pdf_1.pdf}{``Comparative-Historical Analysis: Achievements and Agendas,''} in James Mahoney and Dietrich Rueschemeyer \emph{Comparative Historical Analysis in the Social Sciences}, pp. 3-14. Cambridge University Press, 2003.\phantom{\textcite{Mahoney:2003ui}} 
+				\item[$\bullet$] James Mahoney and Dietrich Rueschemeyer. \href{https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjjlebb7sTbAhXyna0KHWH9AGAQFggrMAE&url=https%3A%2F%2Fcanvas.coloradocollege.edu%2Ffiles%2F5333%2Fdownload%3Fdownload_frd%3D1%26verifier%3DGzimNk8tWeD5HoK4czIDYdyyDjqXAaGUzFWhFDLD&usg=AOvVaw0XARLEGWJXOsc2uYGyFbPO}{``Big, Slow Moving, and Invisible: Macro-Social Processes in the Study of Comparative Politics,''} in James Mahoney and Dietrich Rueschemeyer \emph{Comparative Historical Analysis in the Social Sciences}, pp. 177-208. Cambridge University Press, 2003.\phantom{\textcite{Mahoney:2003ui}}
+
+			\end{itemize}
+		\end{itemize}
+
+~\\
+\item[] \begin{center}{\color{blue}{\bf Friday 2: No recitation.}}\end{center}
+~\\
+
+		\begin{itemize}
+		\item {\bf Nov 5: Path Dependence}
+			\begin{itemize}
+				\item[$\bullet$] James Mahoney. \href{https://doi.org/10.1023/A:100711383}{Path Dependence in Historical Sociology}. \emph{Theory and Society}, 29(4): 507–548, 2000.\phantom{\textcite{James2000}} 
+				\item[$\bullet$] Paul Pierson. \href{http://www.jstor.org/stable/2586011}{Increasing Returns, Path Dependence, and the Study of Politics}. \emph{American Political Science Review}, 94(2): 251-267, 2000.\phantom{\textcite{Pierson2000}} 
+			\end{itemize}
+		\end{itemize}
+
+
+
+
+
+
+		\begin{itemize}
+		\item {\bf Nov 7: Thinking about Temporality}
+			\begin{itemize}
+				\item[$\bullet$] Paul Pierson. \href{https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0898588X00003011}{Not Just What, but \emph{When}: Timing and Sequence in Political Processes}. \emph{Studies in American Political Development}, 14(1), 72–92.\phantom{\textcite{Pierson2000a}}
+				\item[$\bullet$] Tim Buthe. \href{https://people.duke.edu/~buthe/downloads/buthe_apsr_sep2002.pdf}{Taking Temporality Seriously: Modeling History and the Use of Narratives as Evidence}. \emph{American Political Science Review}, 93(3):481-493, 2002.\phantom{\textcite{Buthe2002}}
+			\end{itemize}
+		\end{itemize}
+
+
+
+%\item {\bf Game Theory and Rational Choice}
+%		
+%		\begin{itemize}
+%		\item {\bf {\color{red}Week of Oct 29}}
+%			\begin{itemize}
+%				\item[$\bullet$]  Mark Bonchek and Kenneth Shepsle. ``Analyzing Politics: Rationality, Behavior and Institutions,'' chapters 1 and 2. W. W. Norton \& Company (1st ed edition), 1996.\phantom{\textcite{Bonchek:1996aa}} 
+%				\item[$\bullet$] Jon Elster. \href{http://www.jstor.org/stable/657101}{The Case for Methodological Individualism}. \emph{Theory and Society}, 11(4): 453-482, 1982.\phantom{\textcite{Elster1982}} 
+%			\end{itemize}
+%		\end{itemize}
+
+
+\item {\bf Field Research Techniques}
+		
+		\begin{itemize}
+		\item {\bf Nov 12: The Ethics of Working with Human Subjects}
+			\begin{itemize}
+				\item[$\bullet$] Laura Woliver. \href{https://dornsife.usc.edu/assets/sites/298/docs/interviewing_techniques_ethical_dilemmas.pdf}{Ethical Dilemmas in Personal Interviewing}. \emph{PS: Political Science \& Politics}, 35(4): 677-678, 2002.\phantom{\textcite{Woliver2002}}
+				\item[$\bullet$] David Calvey. \href{http://journals.sagepub.com/doi/pdf/10.1177/0038038508094569}{The Art and Politics of Covert Research: Doing `Situated Ethics' in the Field}. \emph{Sociology}, 42(5): 905-918, 2008.\phantom{\textcite{Calvey2008}} 
+				% consider: \todo{add chapter from manual of political experimentation, and remove Woliver.} 
+			\end{itemize}
+		\end{itemize}
+
+
+		\begin{itemize}
+		\item {\bf Nov 14: Conducting Elite Interviews}
+			\begin{itemize}
+				\item[$\bullet$] Beth Leech. \href{https://doi.org/10.1017/S1049096502001117}{Interview Methods in Political Science}. \emph{PS: Political Science \& Politics}, 35(4): 663-664, 2002.\phantom{\textcite{Leech2002a}}
+				\item[$\bullet$] Beth Leech. \href{https://dornsife.usc.edu/assets/sites/298/docs/interviewing_techniques_asking_questions.pdf}{Asking Questions: Techniques for Semi-structured Interviews}. \emph{PS: Political Science \& Politics}, 35(4): 663-664, 2002.\phantom{\textcite{Leech2002}} 
+				\item[$\bullet$] Kenneth Goldstein. \href{https://dornsife.usc.edu/assets/sites/298/docs/interviewing_techniques_sampling.pdf}{Getting in the Door: Sampling and Completing Elite Interviews}. \emph{PS: Political Science \& Politics}, 35(4): 669-672, 2002.\phantom{\textcite{Goldstein2002}}  
+				\item[$\bullet$] Joel Aberbach and Bert Rockman. \href{http://observatory-elites.org/wp-content/uploads/2012/06/Conducting-and-Coding-Elite-Interviews.pdf}{Conducting and Coding Elite Interviews}. \emph{PS: Political Science \& Politics}, 35(4): 673-676, 2002.\phantom{\textcite{Aberbach2002}} 
+				\item[$\bullet$] Jeffrey Berry. \href{https://doi.org/10.1017/S1049096502001166}{Validity and Reliability Issues in Elite Interviewing}. \emph{PS: Political Science \& Politics}, 35(4): 679-682, 2002.\phantom{\textcite{Berry2002}} 
+				\item[$\bullet$] Shannon Rivera, Polina Kozyreva and Edvard Sarvoskii. \href{https://doi.org/10.1017/S1049096502001178}{Interviewing Political Elites: Lessons from Russia}. \emph{PS: Political Science \& Politics}, 35(4): 683-688, 2002.\phantom{\textcite{Rivera2002}} 
+			\end{itemize}
+		\end{itemize}
+
+
+				\begin{itemize}
+		\item {\bf Nov 19: Focus Groups}
+			\begin{itemize}
+				\item[$\bullet$] David Morgan. \href{http://www.jstor.org/stable/2083427}{Focus Groups}. \emph{Annual Review of Sociology}, 22(1): 129-152, 1996.\phantom{\textcite{Morgan1996}}
+			\end{itemize}
+		\end{itemize}
+
+	
+		\begin{itemize}
+		\item {\bf Nov 21: Ethnography}
+			\begin{itemize}
+				\item[$\bullet$] Clifford Geertz. \href{http://www.jstor.org/stable/20024056}{Deep Play: Notes on the Balinese Cockfight}. \emph{Daedalus}, 101(1): 1-37, 1972.\phantom{\textcite{Geertz1972}}  
+				\item[$\bullet$] Richard Fenno. \href{http://www.jstor.org/stable/1957081}{Observation, Context, and Sequence in the Study of Politics}. \emph{American Political Science Review}, 80(1): 3-15, 1986.\phantom{\textcite{Fenno1986}} 
+			\end{itemize}
+		\end{itemize}
+
+~\\
+\item[] \begin{center}{\color{blue}{\bf Research Design Due}: \underline{{\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/date_design.txt}\unskip}.}}\end{center}
+~\\
+
+	
+		\begin{itemize}
+		\item {\bf Nov 26: Archival Methods}
+			\begin{itemize}
+				\item[$\bullet$] Louis Gottschalk. ``What are History and Historical Sources,'' in \emph{Understanding History: A Primer of Historical Method}, Random House Inc, 1969.\phantom{\textcite{Gottschalk:1969}}
+				\item[$\bullet$] Louis Gottschalk. ``Where Does Historical Information Come From?,'' in \emph{Understanding History: A Primer of Historical Method}, Random House Inc, 1969.\phantom{\textcite{Gottschalk:1969}} 
+			\end{itemize}
+		\end{itemize}
+
+
+	
+		%\begin{itemize}
+		%\item {\bf Nov 28: Early Attempts at Content Analysis}
+			%\begin{itemize}
+				%\item[$\bullet$] Harold Lasswell. \href{https://us.corwin.com/sites/default/files/upm-binaries/19018_Franzosi_V1_Ch01.pdf}{``Why be Quantitative?,''} in Harold Laswell and Nathan Leites (eds.), \emph{Language of Politics: Studies in Quantitative Semantics}, pp. 40-54. New York: George W. Stewart Publishing, 1965.\phantom{\textcite{Lasswell1949}}
+				%\item[$\bullet$] Siegfried Kracauer. \href{http://www.jstor.org/stable/2746123}{The Challenge of Qualitative Content Analysis}. \emph{The Public Opinion Quarterly}, 16(4): 631-642, 1952-1953. 
+				%\item[$\bullet$] Harold Kassarjian. \href{http://www.jstor.org/stable/2488631}{Content Analysis in Consumer Research}. \emph{Journal of Consumer Research}, 4(1): 8-18, 1977.\phantom{\textcite{Kracauer1952}}
+			%\end{itemize}
+		%\end{itemize}
+
+		
+		\begin{itemize}
+		\item {\bf Nov 28: Content and Discourse Analysis Procedures}
+			\begin{itemize}
+				\item[$\bullet$] \href{https://wcfia.harvard.edu/files/wcfia/files/870_symposium.pdf}{``Symposium: Discourse and Content Analysis,''} in Brendan Gough and Steve Robertson (eds.), \emph{Designing and Conducting Gender, Sex, \& Health Research}, pp. 15-27, 2004.\phantom{\textcite{Gough2004}}
+				\item[$\bullet$] Harold Kassarjian. \href{http://www.jstor.org/stable/2488631}{Content Analysis in Consumer Research}. \emph{Journal of Consumer Research}, 4(1): 8-18, 1977.\phantom{\textcite{Kassarjian1977a}}
+			\end{itemize}
+		\end{itemize}
+
+~\\
+\item[] \begin{center}{\color{blue}{\bf Final Presentations/``Conference''}: \underline{{\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/date_conference.txt}\unskip}.}}\end{center}
+~\\
+
+
+\item[] \begin{center}{\color{blue}{\bf Final Exam}: \underline{{\input{/Users/hectorbahamonde/RU/Teaching/Social_Sciences_Epistemology_UGRAD/date_final.txt}\unskip}.}}\end{center}
+~\\
+
+\end{enumerate}
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+\newpage
+\pagenumbering{roman}
+\setcounter{page}{1}
+\printbibliography
+
+
+
+\end{document}
+
