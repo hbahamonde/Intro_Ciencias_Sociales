@@ -11,6 +11,8 @@
 
 Los que empezaron antes, tuvieron una ventaja comparativa, generando un stock inicial de abundancia relativo a los que empezaron tarde. 
 
+     - Ventaja comparativa: es la capacidad de una persona, empresa o país para producir un bien utilizando relativamente menos recursos que otro
+`
 pueblos nomades son pequeños: 
     - Cuantas guaguas puede tener una mama cazadora-recolectora? 
         - Lactancia amenorrea 
@@ -29,5 +31,9 @@ Tb era bueno para transportar cosas
 
 - Sobreabundancia de comida (nómades no pueden cargar tanta comida, solo en una bolsa) -> mas calorías -> menos hambruna -> más gente (especialización del trabajo) -> ejércitos mas grandes (vida más segura).(ejércitos mas grandes)
 
+* mecanismo causal 
+
 
 La abundancia de comida hay que protegerla: nace el estado y la política.
+
+que crees uds. que estos primeros politicos haran? cobrar inpuestos a su gente para pagar invasiones a otros paises.
