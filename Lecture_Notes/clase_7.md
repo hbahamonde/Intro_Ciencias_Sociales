@@ -5,18 +5,17 @@
 1. Nueva actualizacion del programa. 
 
     * remueve libro de Bartels y añade de Fukuyama.
-    * añade link de descarga directa de la traducción de reaction paper
+    * añade link de descarga directa de la traducción de reaction paper.
+    * Reemplaza clase cancelada del 25 de abril (por conf en Conce): jueves 25 (abril): Documental en clases: “Inequality for All.” Este día se puede comer.
 
-2. En ayudantia: 
-
-- cubrir en un 50% el libro. 
-
-- El resto del 50%: (a) enseñar a citar (APA), (b) incentivar a que ocupen este tiempo que no habrá clases para escribir un reaction paper. 
+2. Plan de recuperacion docente:
+    * En ayudantia esta semana: libro. 
+    * En clase del lunes de la proxima semana: en el horario de clase, veran con los TAs un taller como citar y evitar plagios. Ademas de una guia general de como escribir. Lleven sus ideas y preguntas.
 
 
-3. las clases seran recuperadas en seccion de ayudantia. Es decir, los alumnos no tendran clases conmigo, pero tendran ayduantia con uds.
+1. las clases seran recuperadas en seccion de ayudantia. Es decir, los alumnos no tendran clases conmigo, pero tendran ayduantia con uds.
 
-4. tendre acceso irregular a internet, y que los  TAs estaran a cargo del curso (responder emails, etc.).
+2. tendre acceso irregular a internet, y que los  TAs estaran a cargo del curso (responder emails, etc.).
 '
 5. recordar que los RP no se entregan en ayudantia. Solo en clases. Si las clases estan canceladas, no pueden entregar RPs.
 
