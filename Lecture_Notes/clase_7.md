@@ -29,6 +29,13 @@
 2. contenido.
 3. bibliografia. 
 
+Estrategias para escribir:
+1. di lo que vas a decir.
+2. dilo.
+3. dilo de nuevo.
+
+- Pero este formato es MUY breve.
+
 # Citas
 
 - Para que citamos? Plagios. Sera duramente sancionado.
@@ -37,14 +44,15 @@
 - citas al pie de pag. 
 - advertir sobre plagios.
 - justificado.
+- abrevien citas. 
 
 - letra 12. 
 - margenes de 1.5.
-- letra razomable. 
+- formato de letra razonable. 
 
 * mostrar ejemplos en el libro.
 
-# HJoras de Oficina
+# Horas de Oficina
 
 - oficina 7mo piso.
 - ver de nuevo sistema de tomar horas.
